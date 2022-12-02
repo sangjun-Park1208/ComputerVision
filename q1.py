@@ -1,6 +1,6 @@
 import cv2 as cv
 
-def hough_circles():
+def q1():
     src = cv.imread('./images/dice5.jpg', cv.IMREAD_GRAYSCALE)
     if src is None:
         print('Image load failed!')
@@ -22,4 +22,4 @@ def hough_circles():
     cv.waitKey()
     cv.destroyAllWindows()
 
-hough_circles()
+q1()

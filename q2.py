@@ -5,11 +5,11 @@ def q2():
         print('Image load failed!')
         return
 
-    _, src = cv.threshold(src, 128, 255, cv.THRESH_BINARY)
+    _, threshold = cv.threshold(src, 128, 255, cv.THRESH_BINARY)
 
 
-    contours, hierarchy = cv.findContours(src, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE)
-    dst = cv.cvtColor(src, cv.COLOR_GRAY2BGR)
+    contours, hierarchy = cv.findContours(threshold, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE)
+    dst = cv.cvtColor(threshold, cv.COLOR_GRAY2BGR)
 
     idx = 0
     cnt = 1

@@ -1,7 +1,7 @@
 import cv2 as cv
 
 def q4():
-    src = cv.imread('./images/case4/img4_8.png', cv.IMREAD_GRAYSCALE)
+    src = cv.imread('./img4_8.png', cv.IMREAD_GRAYSCALE)
     if src is None:
         print('Image load failed!')
         return
@@ -13,7 +13,7 @@ def q4():
     # 샤프닝
     blurred = cv.GaussianBlur(filtered, (0, 0), 4, 4)
     alpha = 1.0
-    sharped = cv.addWeighted(filtered, 1+alpha, blurred, -alpha, 0.0)
+    sharped = cv.addWeighted(filtered, 1 + alpha, blurred, -alpha, 0.0)
     sharped = cv.addWeighted(sharped, 1 + alpha, blurred, -alpha, 0.0)
     sharped = cv.addWeighted(sharped, 1 + alpha, blurred, -alpha, 0.0)
     cv.imshow('sharped', sharped)
@@ -30,8 +30,6 @@ def q4():
     contours, hierarchy = cv.findContours(erode, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE)
     dst = cv.cvtColor(erode, cv.COLOR_GRAY2BGR)
 
-    print(hierarchy)
-    print(len(contours))
     idx = 0
     i = 1
     ans = []

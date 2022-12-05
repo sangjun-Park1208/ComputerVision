@@ -1,9 +1,17 @@
 import math
-
 import cv2 as cv
 
 def q5():
-    src = cv.imread('./images/case5/img5_7.png', cv.IMREAD_GRAYSCALE)
+    src = cv.imread('./img5_1.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_2.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_5.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_6.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_7.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_8.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_9.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_10.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img5_11.png', cv.IMREAD_GRAYSCALE)
+
     if src is None:
         print('Image load failed!')
         return

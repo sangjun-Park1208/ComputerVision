@@ -1,7 +1,11 @@
 import cv2 as cv
 
 def q1():
-    src = cv.imread('./images/dice5.jpg', cv.IMREAD_GRAYSCALE)
+    src = cv.imread('./dice1.jpg', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./dice5.jpg', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./dice7.jpg', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./dice9.jpg', cv.IMREAD_GRAYSCALE)
+
     if src is None:
         print('Image load failed!')
         return
@@ -15,7 +19,6 @@ def q1():
         for i in range(circles.shape[1]):
             cx, cy, radius = circles[0][i]
             cv.circle(dst, (int(cx), int(cy)), int(radius), (0, 0, 255), 2, cv.LINE_AA)
-
 
     cv.imshow('src', src)
     cv.imshow('dst', dst)

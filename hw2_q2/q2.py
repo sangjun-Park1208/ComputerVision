@@ -1,12 +1,12 @@
 import cv2 as cv
+
 def q2():
-    src = cv.imread('./images/diceAll.jpg', cv.IMREAD_GRAYSCALE)
+    src = cv.imread('./diceAll.jpg', cv.IMREAD_GRAYSCALE)
     if src is None:
         print('Image load failed!')
         return
 
     _, threshold = cv.threshold(src, 128, 255, cv.THRESH_BINARY)
-
 
     contours, hierarchy = cv.findContours(threshold, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE)
     dst = cv.cvtColor(threshold, cv.COLOR_GRAY2BGR)
@@ -18,7 +18,6 @@ def q2():
     while idx >= 0:
         addnum = 0
         while cnt < len(contours):
-            # print("debug", hierarchy[0, cnt, 2])
             if hierarchy[0, cnt, 2] < 0:
                 addnum += 1
                 cnt += 1

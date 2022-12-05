@@ -1,7 +1,10 @@
 import cv2 as cv
 
 def q3():
-    src = cv.imread('./images/case3/img3_1.png', cv.IMREAD_GRAYSCALE)
+    src = cv.imread('./img3_1.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img3_3.png', cv.IMREAD_GRAYSCALE)
+    # src = cv.imread('./img3_4.png', cv.IMREAD_GRAYSCALE)
+
     if src is None:
         print('Image load failed!')
         return
@@ -18,7 +21,6 @@ def q3():
     # 이진화
     _, binarization = cv.threshold(stretch, 185, 255, cv.THRESH_BINARY)
     cv.imshow('binarization', binarization)
-
 
     # 침식
     erode = cv.erode(binarization, None)

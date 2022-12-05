@@ -1,7 +1,7 @@
 import cv2 as cv
 
 def q3():
-    src = cv.imread('./images/case3/img3_4.png', cv.IMREAD_GRAYSCALE)
+    src = cv.imread('./images/case3/img3_1.png', cv.IMREAD_GRAYSCALE)
     if src is None:
         print('Image load failed!')
         return
@@ -19,6 +19,7 @@ def q3():
     _, binarization = cv.threshold(stretch, 185, 255, cv.THRESH_BINARY)
     cv.imshow('binarization', binarization)
 
+
     # 침식
     erode = cv.erode(binarization, None)
     erode = cv.erode(erode, None)
@@ -27,8 +28,6 @@ def q3():
     contours, hierarchy = cv.findContours(erode, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
     dst = cv.cvtColor(erode, cv.COLOR_GRAY2BGR)
 
-    print(hierarchy)
-    print('len(contours)', len(contours))
     idx = 0
     i = 1
     ans = []
